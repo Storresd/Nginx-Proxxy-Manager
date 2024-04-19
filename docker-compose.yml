@@ -1,0 +1,15 @@
+version: '3'
+services:
+  nginxproxy:
+    image: 'jc21/nginx-proxy-manager:latest'
+    ports:
+      - '80:80'
+      - '81:81'
+      - '4433:443'
+    volumes:
+      - ./config.json:/app/config/production.json
+      - ./data:/data
+      - ./letsencrypt:/etc/letsencrypt
+    labels:
+      - "diun.enable=true"
+    restart: always
