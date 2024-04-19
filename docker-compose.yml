@@ -10,6 +10,4 @@ services:
       - ./config.json:/app/config/production.json
       - ./data:/data
       - ./letsencrypt:/etc/letsencrypt
-    labels:
-      - "diun.enable=true"
     restart: always
